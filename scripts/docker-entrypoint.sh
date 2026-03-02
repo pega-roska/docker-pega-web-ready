@@ -402,7 +402,7 @@ rm "${CATALINA_HOME}"/conf/server.xml.tmpl
 # the bootstrap classpath for tomcat.
 #
 if [ -z "${IS_PEGA_25_OR_LATER}" ]; then
-  vc_classpath="/opt/pega/utility/*:/opt/pega/lib/*"
+  vc_classpath="/opt/pega/utility/*:${CATALINA_HOME}/lib/*"
   vc_javaopts="-Xms${INITIAL_HEAP} -Xmx${MAX_HEAP} ${JAVA_OPTS} ${CATALINA_OPTS}"
   vc_javaopts="${vc_javaopts} --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED"
   vc_javaopts="${vc_javaopts} --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED"
